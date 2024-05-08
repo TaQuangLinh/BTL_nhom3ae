@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="911.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo7.HelloController">
+   <children>
+      <Pane fx:id="thanhChucNang" layoutX="8.0" layoutY="16.0" prefHeight="612.0" prefWidth="103.0" style="-fx-background-color: #66cdaa; -fx-background-radius: 2EM;">
+         <children>
+            <Button fx:id="btn_search" layoutY="78.0" mnemonicParsing="false" onAction="#chon_Chuc_nang" prefHeight="71.0" prefWidth="103.0" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/book.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_add" layoutY="164.0" mnemonicParsing="false" onAction="#chon_Chuc_nang" prefHeight="72.0" prefWidth="103.0" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/plus+++.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_API" layoutY="257.0" mnemonicParsing="false" onAction="#chon_Chuc_nang" prefHeight="66.0" prefWidth="103.0" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/google_translate.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_game" layoutY="346.0" mnemonicParsing="false" onAction="#chon_Chuc_nang" prefHeight="40.0" prefWidth="103.0" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/game.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane fx:id="batDau" prefHeight="612.0" prefWidth="103.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2EM;">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <AnchorPane fx:id="panel_search" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="34.0" prefHeight="82.0" prefWidth="262.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0.5em;" text="Search">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="316.0" layoutY="34.0" prefHeight="82.0" prefWidth="451.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0.5em;" text="Definition">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <TextField fx:id="oTimKiem" layoutX="22.0" layoutY="160.0" onKeyReleased="#nhapTu" onKeyTyped="#nhapTu" prefHeight="47.0" prefWidth="207.0" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+            <Button layoutX="232.0" layoutY="160.0" mnemonicParsing="false" onAction="#timKiem" prefHeight="47.0" prefWidth="52.0" style="-fx-background-radius: 2em;" text="Tìm">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="choGhiPhienAm" layoutX="317.0" layoutY="160.0" prefHeight="47.0" prefWidth="242.0" style="-fx-background-color: #A1CCB7; -fx-label-padding: 10;" text="Phiên âm">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="568.0" layoutY="160.0" mnemonicParsing="false" onAction="#phatAm" prefHeight="47.0" prefWidth="52.0" style="-fx-background-radius: 2em;" text="Đọc">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="712.0" layoutY="160.0" mnemonicParsing="false" onAction="#xoaTu" prefHeight="47.0" prefWidth="52.0" style="-fx-background-radius: 2em;" text="Xóa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_sua" layoutX="639.0" layoutY="160.0" mnemonicParsing="false" onAction="#suaTu" prefHeight="47.0" prefWidth="52.0" style="-fx-background-radius: 2em;" text="Sửa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="nghiaCuaTu" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="316.0" layoutY="216.0" prefHeight="390.0" prefWidth="451.0" style="-fx-label-padding: 10; -fx-background-color: #A1CCB7; -fx-background-radius: 1em;" text="Nghĩa của từ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="suggestionList" layoutX="26.0" layoutY="216.0" prefHeight="390.0" prefWidth="262.0" style="-fx-padding: 10; -fx-background-radius: 1em;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel_suaTu" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #FFD700; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="34.0" prefHeight="82.0" prefWidth="742.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0.5em;" text="Sửa từ vựng">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tiengAnh" layoutX="22.0" layoutY="197.0" prefHeight="58.0" prefWidth="370.0" promptText="Nhập từ Tiếng Anh" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="62.0" layoutY="157.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Anh" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="266.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Việt" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="phienAm2" layoutX="438.0" layoutY="197.0" prefHeight="58.0" prefWidth="325.0" promptText="Nhập phiên âm tiếng anh" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button layoutX="622.0" layoutY="551.0" mnemonicParsing="false" onAction="#luuSuaTu" prefHeight="47.0" prefWidth="142.0" style="-fx-background-radius: 2em;" text="Lưu" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="482.0" layoutY="157.0" prefHeight="40.0" prefWidth="118.0" text="Phiên Âm" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="tiengViet2" layoutX="21.0" layoutY="306.0" prefHeight="288.0" prefWidth="588.0" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+            <Button layoutX="21.0" layoutY="34.0" mnemonicParsing="false" onAction="#back" prefHeight="82.0" prefWidth="89.0" style="-fx-background-radius: 0.5em; -fx-background-color: #ADD8E6;" text="🔙" underline="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="panel_game1" layoutX="122.0" layoutY="15.0" prefHeight="612.0" prefWidth="751.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Button fx:id="ButtonA" layoutX="96.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="62.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="A" textFill="#fff6fc">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonB" layoutX="451.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="51.0" prefWidth="62.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="B" textFill="#fff9f9">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="9.0" mnemonicParsing="false" onAction="#backGame" prefHeight="66.0" prefWidth="103.0" style="-fx-background-radius: 1em;" text="    Back">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonD" layoutX="451.0" layoutY="405.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="51.0" prefWidth="62.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="D" textFill="#faffff">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonC" layoutX="96.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="51.0" prefWidth="62.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="C" textFill="#fff8f8">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="answerLabelA" layoutX="165.0" layoutY="264.0" prefHeight="47.0" prefWidth="286.0" text="Label">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="answerLabelC" layoutX="165.0" layoutY="403.0" prefHeight="54.0" prefWidth="285.0" text="Label">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="answerLabelB" layoutX="521.0" layoutY="254.0" prefHeight="58.0" prefWidth="252.0" text="Label">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="answerLabelD" layoutX="522.0" layoutY="409.0" prefHeight="47.0" prefWidth="242.0" text="Label">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="highscoreLabel" alignment="CENTER" graphicTextGap="3.0" layoutX="339.0" layoutY="29.0" prefHeight="54.0" prefWidth="166.0" style="-fx-background-radius: 2em; -fx-background-color: #00FFFF;" text=" Highscore:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="seconds_left" alignment="CENTER" layoutX="651.0" layoutY="14.0" prefHeight="66.0" prefWidth="95.0" style="-fx-background-color: #FFD700; -fx-background-radius: 4em;" text="           Label">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="score_now" layoutX="690.0" layoutY="81.0" prefHeight="47.0" prefWidth="90.0" text="Score: 0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button fx:id="confirmButton" layoutX="333.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleConfirmButtonAction" prefHeight="58.0" prefWidth="118.0" style="-fx-background-radius: 2em;" text="    Confirm" textFill="RED">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font></Button>
+            <TextField fx:id="questionTextField" alignment="CENTER" layoutX="184.0" layoutY="83.0" prefHeight="40.0" prefWidth="440.0" style="-fx-background-color: #E9967A; -fx-background-radius: 2em;" text="que">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font></TextField>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="661.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/clock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="347.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Cup.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="28.0" fitWidth="22.0" layoutX="345.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/confirm.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="28.0" fitWidth="40.0" layoutX="24.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/back.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="questionLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="48.0" layoutY="136.0" prefHeight="104.0" prefWidth="705.0" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-label-padding: 15;" text="Hello">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Calibri Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="136.0" layoutX="1.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/pngegg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="207.0" layoutX="614.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/flower.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="103.0" layoutX="635.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/flower.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="673.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Butter.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="82.0" layoutX="660.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="127.0" fitWidth="180.0" layoutX="87.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Bookpen.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="52.0" layoutX="646.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/money.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="panel_add" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="34.0" prefHeight="82.0" prefWidth="742.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0.5em;" text="Thêm từ vựng">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <TextField fx:id="themTiengAnh" layoutX="22.0" layoutY="197.0" prefHeight="58.0" prefWidth="370.0" promptText="Nhập từ Tiếng Anh" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="62.0" layoutY="157.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Anh" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="266.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Việt" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="themPhienAm" layoutX="438.0" layoutY="197.0" prefHeight="58.0" prefWidth="325.0" promptText="Nhập phiên âm tiếng anh" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="themTiengViet" alignment="TOP_LEFT" layoutX="22.0" layoutY="306.0" prefHeight="288.0" prefWidth="588.0" promptText="Nhập giải thích Tiếng Việt" style="-fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button layoutX="622.0" layoutY="551.0" mnemonicParsing="false" onAction="#luuThemTu" prefHeight="47.0" prefWidth="142.0" style="-fx-background-radius: 2em;" text="Lưu" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="482.0" layoutY="157.0" prefHeight="40.0" prefWidth="118.0" text="Phiên Âm" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="panel_game" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Button layoutX="109.0" layoutY="358.0" mnemonicParsing="false" onAction="#chonGame1" onMouseClicked="#chonGame1" prefHeight="104.0" prefWidth="126.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="Game 1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="565.0" layoutY="358.0" mnemonicParsing="false" onAction="#chonGame2" prefHeight="104.0" prefWidth="125.0" style="-fx-background-color: #5f935a; -fx-background-radius: 1em;" text="Game 2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="190.0" layoutX="553.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/CatchtheWord.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="97.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Quiz.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="97.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/G.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="219.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/A.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/M.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="490.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/E.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="127.0" fitWidth="118.0" layoutX="330.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Note.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="142.0" layoutX="616.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/FindGame.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="237.0" layoutX="342.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Bookpen.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel_API" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="34.0" prefHeight="82.0" prefWidth="742.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0.5em;" text="Dịch văn bản">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="ngonNguGoc" layoutX="146.0" layoutY="139.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Anh" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="ngonNguDich" layoutX="522.0" layoutY="139.0" prefHeight="40.0" prefWidth="118.0" text="Tiếng Việt" textFill="#b81159de">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="dichVanBan" layoutX="341.0" layoutY="551.0" mnemonicParsing="false" onAction="#dich" prefHeight="31.0" prefWidth="95.0" style="-fx-background-radius: 2em;" text="Dịch">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nutDoiNgonNgu" layoutX="362.0" layoutY="139.0" mnemonicParsing="false" onAction="#doi_Ngon_Ngu" prefHeight="40.0" prefWidth="52.0" style="-fx-background-radius: 1em;" text="🔁">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="vanBanDich" alignment="TOP_LEFT" layoutX="395.0" layoutY="179.0" prefHeight="358.0" prefWidth="367.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em; -fx-label-padding: 10;" textFill="#000000fc">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="vanBanGoc" layoutX="22.0" layoutY="179.0" prefHeight="358.0" prefWidth="367.0" promptText="Văn bản gốc" style="-fx-border-radius: 1em; -fx-background-radius: 1em; -fx-padding: 10;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextArea>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="Reslut" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="95.0" layoutY="31.0" prefHeight="96.0" prefWidth="588.0" text="Reslut" textFill="#bf1919">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="208.0" fitWidth="215.0" layoutX="61.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Sun.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="165.0" layoutY="174.0" prefHeight="150.0" prefWidth="564.0" text=" CONGRATULATIONS YOU ON COMPLETING  THE QUIZ GAME!" textFill="#af16d9">
+               <font>
+                  <Font name="Arial Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="190.0" layoutX="549.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Boom.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="percentage" alignment="CENTER" layoutX="268.0" layoutY="289.0" prefHeight="96.0" prefWidth="242.0" style="-fx-background-radius: 2em; -fx-background-color: #87CEFA;" text="Label">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="correct_answer" alignment="CENTER" layoutX="268.0" layoutY="400.0" prefHeight="104.0" prefWidth="242.0" style="-fx-background-radius: 2em; -fx-background-color: #87CEFA;" text="Label">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="exitButton" layoutX="655.0" layoutY="36.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="71.0" prefWidth="95.0" style="-fx-background-radius: 2em; -fx-background-color: #B0C4DE;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="28.0" layoutX="669.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/exit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="195.0" fitWidth="242.0" layoutX="22.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Bookpen.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="Game2" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fx:id="imageGame" fitHeight="201.0" fitWidth="462.0" layoutX="202.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="202.0" />
+            <Button fx:id="nameQ" layoutX="188.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="Q">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Label fx:id="Labelclicked" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="351.0" prefHeight="58.0" prefWidth="306.0" style="-fx-background-color: yellow; -fx-background-radius: 2em;">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button fx:id="nameW" layoutX="233.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="W">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button fx:id="nameE" layoutX="279.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="E">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameR" layoutX="325.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="R">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameT" layoutX="369.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="T">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameY" layoutX="413.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="Y">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameU" layoutX="458.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="U">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameI" layoutX="503.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="I">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameO" layoutX="549.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="O">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameP" layoutX="593.0" layoutY="419.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="P">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameA" layoutX="208.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameS" layoutX="253.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="S">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameD" layoutX="299.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="D">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameF" layoutX="345.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="F">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameG" layoutX="388.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="G">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameH" layoutX="431.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="H">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameJ" layoutX="474.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="J">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameK" layoutX="517.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="K">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameL" layoutX="561.0" layoutY="471.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="L">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameENTER" layoutX="96.0" layoutY="526.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="54.0" prefWidth="142.0" text="Enter">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameZ" layoutX="248.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="Z">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameX" layoutX="292.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="X">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameC" layoutX="337.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="C">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameV" layoutX="381.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="V">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameB" layoutX="425.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="B">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameN" layoutX="469.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="N">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameM" layoutX="512.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="40.0" style="-fx-background-radius: 1em;" text="M">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="nameBACKSPACE" layoutX="561.0" layoutY="527.0" mnemonicParsing="false" onAction="#ClickButton" prefHeight="51.0" prefWidth="142.0" text="Backspace">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onAction="#backGame2" prefHeight="66.0" prefWidth="103.0" style="-fx-background-radius: 1em;" text="   BACK">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font></Button>
+            <Button fx:id="restart" alignment="CENTER" contentDisplay="CENTER" layoutX="655.0" layoutY="20.0" mnemonicParsing="false" onAction="#RestartGame2" prefHeight="58.0" prefWidth="103.0" style="-fx-background-radius: 1em;" text="RESTART">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Label layoutX="318.0" layoutY="16.0" prefHeight="66.0" prefWidth="90.0" text="Score:">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font></Label>
+            <Button layoutX="100.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="C" textFill="#ec0082">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="148.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1EM;" text="A" textFill="#ff0000">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="195.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="C" textFill="#f40000">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="244.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="T" textFill="#ef0303">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="293.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="H" textFill="#e70303">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="401.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="H" textFill="#1337a1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button layoutX="353.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="T" textFill="#053fed">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button layoutX="449.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="E" textFill="#0511ed">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button layoutX="508.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1EM;" text="W" textFill="#151e14">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="557.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1Em;" text="O" textFill="#070b08">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="608.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="R" textFill="#1e2e1f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Button layoutX="658.0" layoutY="84.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #8FBC8F; -fx-background-radius: 1em;" text="D" textFill="#060806">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <ImageView fitHeight="58.0" fitWidth="125.0" layoutX="259.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/money.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="28.0" layoutX="28.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/back.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="score_game2" alignment="CENTER" contentDisplay="CENTER" layoutX="384.0" layoutY="20.0" prefHeight="58.0" prefWidth="82.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="82.0" fitWidth="90.0" layoutX="540.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Butter.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="118.0" layoutX="28.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/animal.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Xinchao" layoutX="123.0" layoutY="15.0" prefHeight="612.0" prefWidth="778.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="95.0" layoutY="31.0" prefHeight="71.0" prefWidth="588.0" text="Dictionary App" textFill="#bf1919">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="95.0" layoutY="143.0" prefHeight="47.0" prefWidth="294.0" text="Nhóm 3 ae:" textFill="#963535">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="95.0" layoutY="204.0" prefHeight="22.0" prefWidth="202.0" text="- Tạ Quang Linh">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="95.0" layoutY="242.0" prefHeight="22.0" prefWidth="202.0" text="- Nguyễn Đức Huy">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="95.0" layoutY="280.0" prefHeight="35.0" prefWidth="242.0" text="- Nguyễn Trung Hiếu">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="475.0" layoutY="175.0" mnemonicParsing="false" onAction="#StartApp" prefHeight="133.0" prefWidth="207.0" style="-fx-background-color: #E5D6AA; -fx-background-radius: 2em;" text="Bắt đầu" textFill="#3db484" underline="true">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
